@@ -4,12 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './Fonts/alcotton.ttf';
+import { BrowserRouter } from 'react-router-dom';
 import './Fonts/Dimica-Light.ttf';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <>
+      {/* <BrowserRouter>
+       
+      </BrowserRouter> */}
+      <App /> 
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function

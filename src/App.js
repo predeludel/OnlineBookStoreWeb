@@ -1,27 +1,75 @@
-  import React from 'react';
-  import './App.css';
-  import 'bootstrap/dist/css/bootstrap.min.css';
-  import NaviBar from './Components/Navibar';
-  import {Catalog} from './Catalog';
-  import {Search} from './Search';
-  import {Compilation} from './Compilation';
-  import {Basket} from './Basket';
-  import {Home} from './Home';
-  import{BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import React from 'react';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './Components/Navbar';
+import Footer from './Components/Footer';
+import { Home } from './pages/Home';
+import { Search } from './pages/Search';
+import { Basket } from './pages/Basket';
+import Compilation from './pages/Compilation';
+import Container from 'react-bootstrap/Container';
+import {
+  createBrowserRouter,
+  RouterProvider
+} from "react-router-dom";
+import { Catalog } from './pages/Catalog';
+const router = createBrowserRouter(
+  // createRoutesFromElements(
+  //   <Route path="/" element={<Home />}>
+  //     <Route path="search" element={<Search />} />jd
+  //     <Route path="basket" element={<Basket/>}/>
+  //     <Route path="compilation" element={<Compilation />}/>
+  //   </Route>
+  // )
+  [
+  {
+    path: "/",
+    element:<Home /> ,
 
-  function App() {
-    return (
-      <Router>
-      <NaviBar></NaviBar>
-      <Routes>
-        <Route path='/catalog' Element ={<Catalog/>}></Route>
-        <Route path='/search' Element ={<Search/>}></Route>
-        <Route path='/compilation' Element ={<Compilation/>}></Route>
-        <Route path='/basket' Element ={<Basket/>}></Route>
-        <Route exact path='/home' Element ={<Home/>}></Route>
-      </Routes>
-    </Router>
-    );
-  }
+  },
+  {
+    path: "/search",
+    element: <Search />,
 
-  export default App;
+  },
+  {
+    path: "/basket",
+    element: <Basket />,
+
+  },
+  {
+    path: "/catalog",
+    element: <Catalog />,
+
+  },
+  {
+    path: "/compilation",
+    element: <Compilation />,
+
+  },
+]
+);
+
+function App() {
+  return <>
+  <Container classNmae="w-auto">
+  <NavBar />
+    <RouterProvider router={router} />
+    <Footer ></Footer>
+  </Container>
+    
+  </>
+  // return (
+  //   <Router>
+  //   <Routes>
+  //     <Route path='/catalog' Element ={<Catalog/>}/>
+  //     <Route path='/search' Element ={<Search/>}/>
+  //     <Route path='/compilation' Element ={<Compilation/>}/>
+  //     <Route path='/basket' Element ={<Basket/>}/>
+  //     <Route exact path='/home' Element ={<Home/>}/>
+  //   </Routes>
+  // 
+  // );
+}
+
+export default App;
