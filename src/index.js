@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './Fonts/alcotton.ttf';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 import './Fonts/Dimica-Light.ttf';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

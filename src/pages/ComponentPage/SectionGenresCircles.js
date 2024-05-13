@@ -6,7 +6,7 @@ import image_13 from './Img/image_13.png';
 import image_14 from './Img/image 14.png';
 import image_15 from './Img/image 15.png';
 import image_12 from './Img/image 12.png';
-
+import React from "react";
 function SectionGenresCircles() {
     return (
         <Container className="d-flex justify-content-center align-items-center mt-4" style={{ background: "#B7ADBE" }}>
