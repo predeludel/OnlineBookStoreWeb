@@ -6,6 +6,7 @@ import Footer from './Components/Footer';
 import { Home } from './pages/Home';
 import { Search } from './pages/Search';
 import { Basket } from './pages/Basket';
+import { Cabinet } from './pages/Cabinet';
 import Compilation from './pages/Compilation';
 import Container from 'react-bootstrap/Container';
 import {
@@ -47,6 +48,11 @@ const router = createBrowserRouter(
     element: <Compilation />,
 
   },
+  {
+    path: "/cabinet",
+    element: <Cabinet />,
+
+  }
 ]
 );
 
