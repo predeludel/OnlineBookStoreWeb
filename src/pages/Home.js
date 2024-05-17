@@ -11,11 +11,12 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import SectionGenresCircles from './ComponentPage/SectionGenresCircles';
 import SectionGenres from './ComponentPage/SectionGenres';
-
+import CardsPopular from './ComponentPage/CardsPopular';
 
 
 export const Home = () => (
   <Container>
+    <CardsPopular></CardsPopular>
     <SectionGenres></SectionGenres>
     <Row className="justify-content-center">
       <Row className="justify-content-center">
@@ -42,7 +43,7 @@ export const Home = () => (
         </Container>
       </Col>
 
-   
+
       <Col xs={12} className="d-block d-sm-none">
         <Container className="d-flex align-items-center">
           <Image style={{ width: 20, height: 37 }} src={Vecto} />

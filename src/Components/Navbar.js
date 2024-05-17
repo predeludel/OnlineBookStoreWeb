@@ -42,7 +42,7 @@ function NaviBar() {
                 </Button>
                 <Image className="m-2" src={heart} alt={"heart"} style={{ width: 40, height: 40 }} />
                 <a href="/cabinet" className="m-2">
-                  <Image src={heart} alt={"heart"} style={{ width: 40, height: 40 }} />
+                  <Image src={login} alt={"heart"} style={{ width: 40, height: 40 }} />
                 </a>
 
               </Nav>

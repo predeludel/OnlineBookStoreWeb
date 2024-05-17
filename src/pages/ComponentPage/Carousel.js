@@ -5,7 +5,7 @@ import Vecto from './Img/Vecto.svg';
 import Image from 'react-bootstrap/Image';
 import CardMini from './CardMini';
 import Container from "react-bootstrap/Container";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import Media from 'react-media';
 

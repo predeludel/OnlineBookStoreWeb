@@ -3,13 +3,13 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import Vector_yel from './Img/Vector_yel.svg';
-
+import { useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 
 function CardMini({ id }) {
     const [book, setBook] = useState([{ title: "wewew" }]);
-
+    const navigate = useNavigate();
     useEffect(() => {
         const url = `http://localhost:8080/book/public/read/${id}`;
         const username = "admin";
@@ -29,10 +29,15 @@ function CardMini({ id }) {
     console.log(book);
 
     return (
-        <Container className="col-centered d-flex justify-content-center align-items-center" style={{ background: "#001C17" }}>
+        <Container
+            className="col-centered d-flex justify-content-center align-items-center"
+            style={{ background: "#001C17", cursor: 'pointer' }}
+            onClick={() => navigate(`/book/${book.id}`)}
+
+        >
             <div className="text-center">
-                <Image className="mt-2" src={`http://localhost:8080/book/public/read/file/${id}`} style={{ width: 112, height: 174 }} />
-                <h3 className="font-Dimica-Light mt-2" style={{ color: "#B7ADBE", fontSize: 20 }}>“{book.title}”</h3>
+                <Image className="mt-2" src={`http://localhost:8080/book/public/read/file/${book.id}`} style={{ width: 112, height: 174 }} />
+                <h3 className="font-Dimica-Light mt-2" style={{ color: "#B7ADBE", fontSize: 20 }}>"{book.title}"</h3>
                 <h5 className="font-Dimica-Light" style={{ color: "#B7ADBE", fontSize: 15 }}>{book.author}</h5>
                 <Container className="col-centered">
                     <Button className="p-1 m-1 text-dark background-light" variant="light" style={{ borderRadius: '60px', fontFamily: 'Dimica-Light' }}>{book.price} ₽</Button>

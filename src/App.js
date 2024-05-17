@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { Search } from './pages/Search';
 import { Basket } from './pages/Basket';
 import { Cabinet } from './pages/Cabinet';
+import { Book } from './pages/Book';
 import Compilation from './pages/Compilation';
 import Container from 'react-bootstrap/Container';
 import {
@@ -51,6 +52,11 @@ const router = createBrowserRouter(
   {
     path: "/cabinet",
     element: <Cabinet />,
+
+  },
+  {
+    path: "/book/:id",
+    element: <Book />,
 
   }
 ]
