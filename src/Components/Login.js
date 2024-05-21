@@ -1,45 +1,30 @@
-import React,  { useState }  from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import login from './Icon/ICONS_1.svg';
 
 function MydModalLogin(props) {
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-
     return (
-        <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <Form>
+        <Modal {...props} centered>
+            <Modal.Body className="d-flex flex-column align-items-center">
+                <h2 id="contained-modal-title-vcenter mt-4" className="font-alcotton" style={{ webkitTextStroke: 1 }}>ВХОД</h2>
+                <Form className="w-100">
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control
-                            type="email"
-                            placeholder="name@example.com"
-                            autoFocus
-                        />
+                        <Form.Control type="phone" placeholder="Номер телефона" autoFocus style={{ border: "none", borderBottom: "1px solid black", borderRadius: 0, textAlign: "center" }} />
                     </Form.Group>
-                    <Form.Group
-                        className="mb-3"
-                        controlId="exampleForm.ControlTextarea1"
-                    >
-                        <Form.Label>Example textarea</Form.Label>
-                        <Form.Control as="textarea" rows={3} />
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput2" >
+                        <Form.Label></Form.Label>
+                        <Form.Control type="password" placeholder="Пароль"  style={{ border: "none", borderBottom: "1px solid black", borderRadius: 0, textAlign: "center" }}/>
                     </Form.Group>
                 </Form>
+                <Button closeButton variant="outline-dark m-2 font-Dimica-Light" style={{ fontSize: 24, borderRadius: '60px', fontFamily: 'Dimica-Light' }}>
+                    Войти
+                </Button>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                </Button>
-            </Modal.Footer>
         </Modal>);
 }
 export default MydModalLogin;

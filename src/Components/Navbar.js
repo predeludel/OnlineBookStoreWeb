@@ -6,10 +6,13 @@ import login from './Icon/ICONS_1.svg';
 import backet from './Icon/backet.svg';
 import Media from 'react-media';
 import MydModalWithGrid from './Сatalog.js';
-
+import MydModalLogin from './Login.js';
 
 function NaviBar() {
   const [modalShow, setModalShow] = useState(false);
+  const [show, setShow] = useState(false);
+
+
   return (
     <Media query="(min-width: 768px)">
       {matches =>
@@ -34,17 +37,13 @@ function NaviBar() {
                   Подборка
                 </Nav.Link>
               </Nav>
-              <Nav>
-
-
+              <Nav className='justify-content-center'>
                 <Button href="/basket" variant="outline-dark m-2 font-Dimica-Light" style={{ fontSize: 24, borderRadius: '60px', fontFamily: 'Dimica-Light' }}>
                   Корзина
                 </Button>
                 <Image className="m-2" src={heart} alt={"heart"} style={{ width: 40, height: 40 }} />
-                <a href="/cabinet" className="m-2">
-                  <Image src={login} alt={"heart"} style={{ width: 40, height: 40 }} />
-                </a>
-
+                <Image className="justify-content-center m-2" src={login} style={{ width: 40, height: 40 }} onClick={() => setShow(true)} />
+                <MydModalLogin show={show} onHide={() => setShow(false)} />
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -76,7 +75,9 @@ function NaviBar() {
                 <a href="/basket">
                   <Image className="m-1" src={backet} alt={"heart"} style={{ width: 27, height: 27, justifyContent: "center" }} />
                 </a>
-                <Image className="m-1" src={login} alt={"login"} style={{ width: 27, height: 27, justifyContent: "center" }} />
+                <Image className="m-1" src={login} style={{ width: 27, height: 27, justifyContent: "center"  }} onClick={() => setShow(true)} />
+                <MydModalLogin show={show} onHide={() => setShow(false)} />
+
               </Container>
             </Nav>
           </Navbar>
