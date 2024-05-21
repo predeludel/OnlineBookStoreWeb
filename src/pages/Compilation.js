@@ -1,7 +1,6 @@
 import React from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import Container from "react-bootstrap/Container";
 import Carousel from "./ComponentPage/Carousel";
 
@@ -18,21 +17,21 @@ export const Compilation = () => (
     <Row>
       <Col className="text-center d-flex mt-2">
         <h4 className="font-Dimica-Light text-dark mt-4">Лимитированная коллекция</h4>
-        <Button className="text-dark m-4 " variant="white" style={{ background: "#EBEACA", borderRadius: '30px', fontFamily: 'Dimica-Light' }}>Все</Button>
+        
       </Col>
     </Row>
     <Carousel></Carousel>
     <Row>
       <Col className="text-center d-flex mt-2">
         <h4 className="font-Dimica-Light text-dark mt-4">На основе понравившихся</h4>
-        <Button className="text-dark m-4 " variant="white" style={{ background: "#EBEACA", borderRadius: '30px', fontFamily: 'Dimica-Light' }}>Все</Button>
+        
       </Col>
     </Row>
     <Carousel></Carousel>
     <Row>
       <Col className="text-center d-flex mt-2">
         <h4 className="font-Dimica-Light text-dark mt-4">Kоллекция</h4>
-        <Button className="text-dark m-4 " variant="white" style={{ background: "#EBEACA", borderRadius: '30px', fontFamily: 'Dimica-Light' }}>Все</Button>
+       
       </Col>
     </Row>
     <Carousel></Carousel>

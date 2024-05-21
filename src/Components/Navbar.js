@@ -73,7 +73,9 @@ function NaviBar() {
             <Nav className="justify-content-center ms-auto text-center">
               <Container className="col-centered d-flex justify-content-center align-items-center">
                 <Image className="m-1" src={heart} alt={"heart"} style={{ width: 27, height: 27, justifyContent: "center" }} />
-                <Image className="m-1" src={backet} alt={"heart"} style={{ width: 27, height: 27, justifyContent: "center" }} />
+                <a href="/basket">
+                  <Image className="m-1" src={backet} alt={"heart"} style={{ width: 27, height: 27, justifyContent: "center" }} />
+                </a>
                 <Image className="m-1" src={login} alt={"login"} style={{ width: 27, height: 27, justifyContent: "center" }} />
               </Container>
             </Nav>

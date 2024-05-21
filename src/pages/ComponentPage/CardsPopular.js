@@ -4,7 +4,10 @@ import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 function CardsPopular() {
+    const navigate = useNavigate();
     const [books, setBook] = useState([{ title: "wewew" }]);
 
     useEffect(() => {
@@ -29,11 +32,11 @@ function CardsPopular() {
                     {(index % 2 === 0) ? (
                         <>
                             {book.title && <p className="font-Dimica-Light text-dark m-1" style={{ textDecoration: "underline" }}>“{book.title}”</p>}
-                          <Image src={`http://localhost:8080/book/public/read/file/${index + 1}`} className="m-1" style={{ width: 202, height: 278 }} />
+                          <Image src={`http://localhost:8080/book/public/read/file/${index + 1}`} className="m-1" style={{ width: 202, height: 278 }} onClick={() => navigate(`/book/${book.id}`)}/>
                         </>
                     ) : (
                         <>
-                            <Image src={`http://localhost:8080/book/public/read/file/${index + 1}`} className="m-1" style={{ width: 202, height: 278 }} />
+                            <Image src={`http://localhost:8080/book/public/read/file/${index + 1}`} className="m-1" style={{ width: 202, height: 278 }} onClick={() => navigate(`/book/${book.id}`)} />
                             {book.title && <p className="font-Dimica-Light text-dark m-1" style={{ textDecoration: "underline" }}>“{book.title}”</p>}
                         </>
                     )}

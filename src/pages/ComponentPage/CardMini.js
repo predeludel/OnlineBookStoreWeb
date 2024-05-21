@@ -5,6 +5,7 @@ import Image from 'react-bootstrap/Image';
 import Vector_yel from './Img/Vector_yel.svg';
 import { useNavigate } from 'react-router-dom';
 
+
 import { useState, useEffect } from 'react';
 
 function CardMini({ id }) {
@@ -86,11 +87,11 @@ function CardMini({ id }) {
         <Container
             className="col-centered d-flex justify-content-center align-items-center"
             style={{ background: "#001C17", cursor: 'pointer' }}
-            onClick={() => navigate(`/book/${book.id}`)}
+            
 
         >
             <div className="text-center">
-                <Image className="mt-2" src={`http://localhost:8080/book/public/read/file/${book.id}`} style={{ width: 112, height: 174 }} />
+                <Image className="mt-2" src={`http://localhost:8080/book/public/read/file/${book.id}`} style={{ width: 112, height: 174 }} onClick={() => navigate(`/book/${book.id}`)} />
                 <h3 className="font-Dimica-Light mt-2" style={{ color: "#B7ADBE", fontSize: 20 }}>"{book.title}"</h3>
                 <h5 className="font-Dimica-Light" style={{ color: "#B7ADBE", fontSize: 15 }}>{book.author}</h5>
                 <Container className="col-centered">
