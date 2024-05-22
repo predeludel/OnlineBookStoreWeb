@@ -15,7 +15,7 @@ function CardMini({ id }) {
     useEffect(() => {
         const fetchBookData = async () => {
             try {
-                const url = `http://localhost:8080/book/public/read/${id}`;
+                const url = `http://178.154.206.159:8080/book/public/read/${id}`;
                 const username = "admin";
                 const password = "admin";
                 let headers = new Headers();
@@ -53,7 +53,7 @@ function CardMini({ id }) {
                 id: 1,
                 username: "admin",
                 phone: null,
-                password: "$2a$10$TXbtxS9RCbQc20q2n2W2veVzLj9U6ef05PHPwWljRrL4CyMbUFQVy",
+                password: "$2a$10$Rr5flSEJSKmCRjty3orsFeDfS2eaDkTwncEDdmeheL56Xtcn6TwqO",
                 isAdmin: true
               }
                 
@@ -65,7 +65,7 @@ function CardMini({ id }) {
         let headers = new Headers();
         headers.set("Authorization", "Basic " + btoa(username + ":" + password));
 
-        fetch('http://localhost:8080/basket_book', {
+        fetch('http://178.154.206.159:8080/basket_book', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ function CardMini({ id }) {
             })
             .catch(error => console.error('Error adding to basket:', error));
     };
-
+    console.log(`./Img/${book.id}.jpg`)
     return (
         <Container
             className="col-centered d-flex justify-content-center align-items-center"
@@ -91,7 +91,7 @@ function CardMini({ id }) {
 
         >
             <div className="text-center">
-                <Image className="mt-2" src={`http://localhost:8080/book/public/read/file/${book.id}`} style={{ width: 112, height: 174 }} onClick={() => navigate(`/book/${book.id}`)} />
+                <Image className="mt-2" src={process.env.PUBLIC_URL + `/Img/${id}.jpg`} style={{ width: 112, height: 174 }} onClick={() => navigate(`/book/${book.id}`)} />
                 <h3 className="font-Dimica-Light mt-2" style={{ color: "#B7ADBE", fontSize: 20 }}>"{book.title}"</h3>
                 <h5 className="font-Dimica-Light" style={{ color: "#B7ADBE", fontSize: 15 }}>{book.author}</h5>
                 <Container className="col-centered">

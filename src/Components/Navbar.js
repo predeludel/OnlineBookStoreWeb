@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Navbar, NavbarBrand, Image, Container } from "react-bootstrap";
 import Nav from 'react-bootstrap/Nav';
 import heart from './Icon/ICONS.svg';
@@ -7,11 +7,20 @@ import backet from './Icon/backet.svg';
 import Media from 'react-media';
 import MydModalWithGrid from './Сatalog.js';
 import MydModalLogin from './Login.js';
+import { useState, useEffect } from 'react';
 
 function NaviBar() {
   const [modalShow, setModalShow] = useState(false);
   const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    
+    const isFirstVisit = localStorage.getItem('isFirstVisit') !== 'true';
+    if (isFirstVisit) {
+      setShow(true);
+      localStorage.setItem('isFirstVisit', 'true');
+    }
+  }, []);
 
   return (
     <Media query="(min-width: 768px)">
@@ -75,7 +84,7 @@ function NaviBar() {
                 <a href="/basket">
                   <Image className="m-1" src={backet} alt={"heart"} style={{ width: 27, height: 27, justifyContent: "center" }} />
                 </a>
-                <Image className="m-1" src={login} style={{ width: 27, height: 27, justifyContent: "center"  }} onClick={() => setShow(true)} />
+                <Image className="m-1" src={login} style={{ width: 27, height: 27, justifyContent: "center" }} onClick={() => setShow(true)} />
                 <MydModalLogin show={show} onHide={() => setShow(false)} />
 
               </Container>

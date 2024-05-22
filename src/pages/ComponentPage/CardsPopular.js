@@ -11,7 +11,7 @@ function CardsPopular() {
     const [books, setBook] = useState([{ title: "wewew" }]);
 
     useEffect(() => {
-        const url = `http://localhost:8080/book/public/read`;
+        const url = `http://178.154.206.159:8080/book/public/read`;
         const username = "admin";
         const password = "admin";
         let headers = new Headers();
@@ -32,11 +32,11 @@ function CardsPopular() {
                     {(index % 2 === 0) ? (
                         <>
                             {book.title && <p className="font-Dimica-Light text-dark m-1" style={{ textDecoration: "underline" }}>“{book.title}”</p>}
-                          <Image src={`http://localhost:8080/book/public/read/file/${index + 1}`} className="m-1" style={{ width: 202, height: 278 }} onClick={() => navigate(`/book/${book.id}`)}/>
+                          <Image src={process.env.PUBLIC_URL + `/Img/${index+1}.jpg`} className="m-1" style={{ width: 202, height: 278 }} onClick={() => navigate(`/book/${book.id}`)}/>
                         </>
                     ) : (
                         <>
-                            <Image src={`http://localhost:8080/book/public/read/file/${index + 1}`} className="m-1" style={{ width: 202, height: 278 }} onClick={() => navigate(`/book/${book.id}`)} />
+                            <Image src={process.env.PUBLIC_URL + `/Img/${index+1}.jpg`} className="m-1" style={{ width: 202, height: 278 }} onClick={() => navigate(`/book/${book.id}`)} />
                             {book.title && <p className="font-Dimica-Light text-dark m-1" style={{ textDecoration: "underline" }}>“{book.title}”</p>}
                         </>
                     )}

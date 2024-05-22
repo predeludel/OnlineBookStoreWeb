@@ -13,7 +13,7 @@ export const Basket = () => {
      const navigate = useNavigate();
 
      useEffect(() => {
-          const url = 'http://localhost:8080/basket_book/read';
+          const url = 'http://178.154.206.159:8080/basket_book/read';
           const username = "admin";
           const password = "admin";
           let headers = new Headers();

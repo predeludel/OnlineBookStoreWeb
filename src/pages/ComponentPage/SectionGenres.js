@@ -10,7 +10,7 @@ function SectionGenres() {
     const [showAll, setShowAll] = useState(false);
 
     useEffect(() => {
-        const url = `http://localhost:8080/category/public/read`;
+        const url = `http://178.154.206.159:8080/category/public/read`;
         const username = "admin";
         const password = "admin";
         let headers = new Headers();

@@ -12,7 +12,7 @@ function CardBasket({ id }) {
     const [book, setBook] = useState([{ title: "wewew" }]);
     const navigate = useNavigate();
     useEffect(() => {
-        const url = `http://localhost:8080/book/public/read/${id}`;
+        const url = `http://178.154.206.159:8080/book/public/read/${id}`;
         const username = "admin";
         const password = "admin";
         let headers = new Headers();
@@ -33,7 +33,7 @@ function CardBasket({ id }) {
             <Row className="">
                 <Row  className="d-none d-sm-flex justify-content-center mt-4" style={{ }}>
                     <Col md={3} className="justify-content-end" style={{justifyContent: "end"}}>
-                        <Image className="justify-content-end" src={`http://localhost:8080/book/public/read/file/${book.id}`} style={{ height: "260px", width: "220px", justifyContent: "end" }} onClick={() => navigate(`/book/${book.id}`)} />
+                        <Image className="justify-content-end" src={process.env.PUBLIC_URL + `/Img/${id}.jpg`} style={{ height: "260px", width: "220px", justifyContent: "end" }} onClick={() => navigate(`/book/${book.id}`)} />
                     </Col>
                     <Col md={3} className="">
                         <h5 className="font-Dimica-Light">"{book.title}"</h5>
@@ -47,7 +47,7 @@ function CardBasket({ id }) {
 
                 <Row className="d-block d-sm-none d-flex justify-content-center" style={{ alignItems: "flex-start" }}>
                     <Col xs={5} className="mt-4">
-                        <Image src={`http://localhost:8080/book/public/read/file/${book.id}`} style={{ maxWidth: "100%", height: "auto", width: "100%" }} onClick={() => navigate(`/book/${book.id}`)} />
+                        <Image src={process.env.PUBLIC_URL + `/Img/${id}.jpg`} style={{ maxWidth: "100%", height: "auto", width: "100%" }} onClick={() => navigate(`/book/${book.id}`)} />
                     </Col>
                     <Col xs={5} className="mt-4">
                         <h5 className="font-Dimica-Light">"{book.title}"</h5>

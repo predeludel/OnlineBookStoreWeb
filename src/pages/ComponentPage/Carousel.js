@@ -11,7 +11,7 @@ import Media from 'react-media';
 
 function Carousel() {
     const [activeIndex, setActiveIndex] = useState(0);
-    const books = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const books = [6, 7, 8, 9,10,11,12];
 
     const handleNext = (step) => {
         setActiveIndex((activeIndex + step) % books.length);
